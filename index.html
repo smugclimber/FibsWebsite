@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fibonacci's Website!</title>
+</head>
+<body style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/FibonacciSpiral.svg/354px-FibonacciSpiral.svg.png'); background-color: #cccccc;">
+  <div class="container">
+    <h1 style="background-color: white; width: 500px;">Welcome to Fibonacci's crappy website!</h1>
+    <p style="background-color: white; width: 300px;">Below will output whatever length of Fibannacci's sequence you desire:</p>
+    <p id="results" style="background-color: white; width: 1500px;">test</p>
+    <!-- <form onsubmit="fibProcessor()"> -->
+      Enter a Number:<br style="background-color: white; width: 50px;">
+      <input type="text" id="number"><br>
+      <input type="submit" value="submit" onclick="fibProcessor()">
+    <!-- </form> -->
+  </div>
+    <script>
+
+    function fibProcessor()
+    {
+      console.log('im here')
+      var userNum = document.getElementById("number").value; //insert user input
+
+      var outputArr = [1,1];
+
+
+      for (var i = 0; i < userNum; i++){
+        var x = outputArr[0+i];
+        var y = outputArr[1+i];
+        var newSum = x + y;
+        outputArr.push(newSum);
+        console.log(outputArr);
+      }
+      document.getElementById("results").innerHTML = outputArr;
+    };
+    </script>
+  </body>
+</html>
